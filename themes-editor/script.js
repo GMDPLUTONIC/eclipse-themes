@@ -5,12 +5,11 @@ let theme = {
         buttonForegroundColor: "#FFFFFF", buttonHoveredColor: "#FFFFFF", checkboxBackgroundColor: "#FFFFFF",
         disabledColor: "#FFFFFF", titleBackgroundColor: "#FFFFFF", titleForegroundColor: "#FFFFFF"
     },
-    details: { author: "", description: "", layout: "0", name: "Example-Theme", renderer: 0, schema: 1, style: 2 },
+    details: { author: "", description: "", layout: "0", name: "Theme-Name", renderer: 0, schema: 1, style: 2 },
     other: { borderSize: 0, font: "Rubik", fontSize: 16, framePadding: 5, windowRounding: 0 }
 };
 
 function updatePreview() {
-    // Update theme values from form inputs
     theme.blur.blurEnabled = document.getElementById('blurEnabled').checked;
     theme.blur.blurRadius = parseFloat(document.getElementById('blurRadius').value);
     theme.blur.blurSpeed = parseFloat(document.getElementById('blurSpeed').value);
@@ -46,6 +45,41 @@ function updatePreview() {
     document.getElementById('previewButton').style.fontSize = theme.other.fontSize + 'px';
 }
 
+// Populate form fields based on loaded theme
+function populateForm() {
+    document.getElementById('blurEnabled').checked = theme.blur.blurEnabled;
+    document.getElementById('blurRadius').value = theme.blur.blurRadius;
+    document.getElementById('blurSpeed').value = theme.blur.blurSpeed;
+
+    document.getElementById('backgroundColor').value = theme.colors.backgroundColor;
+    document.getElementById('borderColor').value = theme.colors.borderColor;
+    document.getElementById('buttonActivatedColor').value = theme.colors.buttonActivatedColor;
+    document.getElementById('buttonForegroundColor').value = theme.colors.buttonForegroundColor;
+    document.getElementById('buttonHoveredColor').value = theme.colors.buttonHoveredColor;
+    document.getElementById('checkboxBackgroundColor').value = theme.colors.checkboxBackgroundColor;
+    document.getElementById('disabledColor').value = theme.colors.disabledColor;
+    document.getElementById('titleBackgroundColor').value = theme.colors.titleBackgroundColor;
+    document.getElementById('titleForegroundColor').value = theme.colors.titleForegroundColor;
+
+    document.getElementById('author').value = theme.details.author;
+    document.getElementById('description').value = theme.details.description;
+    document.getElementById('layout').value = theme.details.layout;
+    document.getElementById('name').value = theme.details.name;
+    document.getElementById('renderer').value = theme.details.renderer;
+    document.getElementById('schema').value = theme.details.schema;
+    document.getElementById('style').value = theme.details.style;
+
+    document.getElementById('borderSize').value = theme.other.borderSize;
+    document.getElementById('font').value = theme.other.font;
+    document.getElementById('fontSize').value = theme.other.fontSize;
+    document.getElementById('framePadding').value = theme.other.framePadding;
+    document.getElementById('windowRounding').value = theme.other.windowRounding;
+
+    // Reflect the values in the preview pane
+    updatePreview();
+}
+
+// Save the theme data as a JSON file
 function exportTheme() {
     const themeJson = JSON.stringify(theme, null, 4);
     const blob = new Blob([themeJson], { type: 'application/json' });
@@ -55,23 +89,13 @@ function exportTheme() {
     link.click();
 }
 
+// Load a theme file and populate the form fields
 function loadTheme(event) {
     const file = event.target.files[0];
     const reader = new FileReader();
     reader.onload = function(e) {
         theme = JSON.parse(e.target.result);
-        // Populate form inputs with the loaded theme
-        document.getElementById('blurEnabled').checked = theme.blur.blurEnabled;
-        document.getElementById('blurRadius').value = theme.blur.blurRadius;
-        document.getElementById('blurSpeed').value = theme.blur.blurSpeed;
-        document.getElementById('backgroundColor').value = theme.colors.backgroundColor;
-        document.getElementById('borderColor').value = theme.colors.borderColor;
-        document.getElementById('buttonActivatedColor').value = theme.colors.buttonActivatedColor;
-        document.getElementById('buttonForegroundColor').value = theme.colors.buttonForegroundColor;
-        document.getElementById('buttonHoveredColor').value = theme.colors.buttonHoveredColor;
-        document.getElementById('checkboxBackgroundColor').value = theme.colors.checkboxBackgroundColor;
-        document.getElementById('disabledColor').value = theme.colors.disabledColor;
-        document.getElementById('titleBackgroundColor').value = theme.colors.titleBackgroundColor;
-        document.getElementById('titleForegroundColor').value = theme.colors.titleForegroundColor;
-        document.getElementById('author').value = theme.details.author;
-        document.getElement
+        populateForm();
+    };
+    reader.readAsText(file);
+}

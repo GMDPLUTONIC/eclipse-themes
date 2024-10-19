@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eclipse Themes | Theme Editor</title>
     <link rel="stylesheet" href="/styles.css">
-    <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/sticky-js@1.3.0/dist/sticky.min.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/headroom.js@0.12.0/dist/headroom.min.js"></script>
 </head>
 <body>
     
@@ -33,13 +30,13 @@
 
     <div class="section" id="details-section">
         <h3>Details:</h3>
-        <label>Author <input type="text" id="author" onchange="updatePreview()"></label><br>
-        <label>Description <input type="text" id="description" onchange="updatePreview()"></label><br>
-        <label>Layout <input autocomplete="off" type="text" id="layout" onchange="updatePreview()"></label><br>
-        <label>Name <input autocomplete="off" type="text" id="name" placeholder="Theme Name" value="Example-Theme" onchange="updateValue('name', this.value)"> </label><br>
-        <label>Renderer <input type="number" id="renderer" value="0" placeholder="Renderer" onchange="updatevalue('renderer', this.value)"></label><br>
-        <label>Schema <input type="number" id="schema" min="1" max="10" onchange="updatePreview()"></label><br>
-        <label>Style <input type="number" id="style" min="0" max="2" onchange="updatePreview()"></label>
+        <label>Author <input autocomplete="off" type="text" id="author" placeholder="Author" onchange="updatePreview()"></label><br>
+        <label>Description <input autocomplete="off" type="text" id="description" onchange="updatePreview()"></label><br>
+        <label>Layout <input autocomplete="off" type="text" id="layout" placeholder="Layout" value="0" onchange="updatePreview()"></label><br>
+        <label>Name <input autocomplete="off" type="text" id="name" placeholder="Theme Name" value="Theme-Name" onchange="updateValue('name', this.value)"> </label><br>
+        <label>Renderer <input autocomplete="off" type="number" id="renderer" placeholder="Renderer" value="0" min="0" max="1" onchange="updateValue('renderer', this.value)"></label><br>
+        <label>Schema <input autocomplete="off" type="number" id="schema" placeholder="Schema" value="1" min="0" max="1" onchange="updateValue('schema', this.value)"></label><br>
+        <label>Style <input autocomplete="off" type="number" id="style" placeholder="Style" value="2" min="0" max="2" onchange="updateValue('style', this.value)"></label>
     </div>
 
     <div class="section" id="other-section">
