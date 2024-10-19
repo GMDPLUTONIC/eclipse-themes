@@ -1,0 +1,52 @@
+{
+    "blur": {
+        "blurEnabled": false,
+        "blurRadius": 1.0,
+        "blurSpeed": 0.3
+    },
+    "colors": {
+        "backgroundColor": "282A36F9",
+        "borderColor": "535770F9",
+        "buttonActivatedColor": "707593FF",
+        "buttonActiveForeground": "FFFFFFFF",
+        "buttonBackgroundColor": "44475AFF",
+        "buttonDisabledColor": "8D91A9FF",
+        "buttonDisabledForeground": "B2B2B2FF",
+        "buttonForegroundColor": "FFFFFFFF",
+        "buttonHoveredColor": "595D77FF",
+        "buttonHoveredForeground": "FFFFFFFF",
+        "checkboxBackgroundColor": "3D4053F9",
+        "checkboxCheckmarkColor": "8BE9FDFF",
+        "checkboxForegroundColor": "FFFFFFFF",
+        "disabledColor": "999999FF",
+        "foregroundColor": "F8F8F2FF",
+        "frameBackground": "3D4053F9",
+        "titleBackgroundColor": "44475AFF",
+        "titleForegroundColor": "F4F4F4FF"
+    },
+    "details": {
+        "author": "Stunip",
+        "description": "Dracula Theme ported to Eclipse Menu (https://draculatheme.com)",
+        "layout": 0,
+        "name": "Dracula Theme",
+        "renderer": 0,
+        "schema": 1,
+        "style": 2
+    },
+    "other": {
+        "borderSize": 0.0,
+        "font": "Rubik",
+        "fontSize": 16.0,
+        "framePadding": 5.0,
+        "frameRounding": 2.0,
+        "horizontalInnerSpacing": 8.0,
+        "horizontalSpacing": 12.0,
+        "indentSpacing": 25.0,
+        "uiScale": 1.2,
+        "verticalInnerSpacing": 6.0,
+        "verticalSpacing": 8.0,
+        "windowMargin": 4.0,
+        "windowPadding": 15.0,
+        "windowRounding": 0.0
+    }
+}
