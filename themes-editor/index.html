@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eclipse Themes | Theme Editor</title>
     <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" href="/favicon.png">
 </head>
 <body>
+
+    <div class="section">
+        <h3>Upload Custom Theme</h3>
+        <input type="file" id="uploadCustomTheme" onchange="applyCustomTheme(event)">
+    </div>
     
     <div class="section" id="blur-section">
         <h3>Blur Settings:</h3>
@@ -30,9 +36,9 @@
 
     <div class="section" id="details-section">
         <h3>Details:</h3>
-        <label>Author <input autocomplete="off" type="text" id="author" placeholder="Author" onchange="updatePreview()"></label><br>
-        <label>Description <input autocomplete="off" type="text" id="description" onchange="updatePreview()"></label><br>
-        <label>Layout <input autocomplete="off" type="text" id="layout" placeholder="Layout" value="0" onchange="updatePreview()"></label><br>
+        <label>Author <input autocomplete="off" type="text" id="author" placeholder="Theme-Author" value="Theme-Author" onchange="updateValue('author', this.value)"></label><br>
+        <label>Description <input autocomplete="off" type="text" id="description" placeholder="Theme-Description" value="Theme-Description" onchange="updateValue('description', this.value)"></label><br>
+        <label>Layout <input autocomplete="off" type="text" id="layout" placeholder="Layout" value="0" min="0" max="2" onchange="updateValue('layout', this.value)"></label><br>
         <label>Name <input autocomplete="off" type="text" id="name" placeholder="Theme Name" value="Theme-Name" onchange="updateValue('name', this.value)"> </label><br>
         <label>Renderer <input autocomplete="off" type="number" id="renderer" placeholder="Renderer" value="0" min="0" max="1" onchange="updateValue('renderer', this.value)"></label><br>
         <label>Schema <input autocomplete="off" type="number" id="schema" placeholder="Schema" value="1" min="0" max="1" onchange="updateValue('schema', this.value)"></label><br>
@@ -41,8 +47,8 @@
 
     <div class="section" id="other-section">
         <h3>Other Settings:</h3>
-        <label>Border Size <input type="range" id="borderSize" min="0" max="20" step="1" onchange="updatePreview()"></label><br>
-        <label>Font <input type="text" id="font" value="Rubik" onchange="updatePreview()"></label><br>
+        <label>Border Size <input type="range" id="borderSize" placeholder="Border Size" Value="0" min="0" max="20" step="1" onchange="updateValue('borderSize',this.value)"></label><br>
+        <label>Font <input type="text" id="font" placeholder="Font (you need the font file ".ttf" for any custom themes)" value="Rubik" onchange="updatePreview()"></label><br>
         <label>Font Size <input type="number" id="fontSize" min="8" max="32" step="1" onchange="updatePreview()"></label><br>
         <label>Frame Padding <input type="range" id="framePadding" min="0" max="20" step="1" onchange="updatePreview()"></label><br>
         <label>Window Rounding <input type="range" id="windowRounding" min="0" max="20" step="1" onchange="updatePreview()"></label>

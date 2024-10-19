@@ -99,3 +99,21 @@ function loadTheme(event) {
     };
     reader.readAsText(file);
 }
+
+// Apply a custom theme uploaded by the user
+function applyCustomTheme(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const customTheme = JSON.parse(e.target.result);
+        applyTheme(customTheme);
+    };
+    reader.readAsText(file);
+}
+
+// Apply the loaded or uploaded theme to the site
+function applyTheme(customTheme) {
+    // Merge the custom theme into the current theme structure
+    Object.assign(theme, customTheme);
+    populateForm();  // Update the form and preview pane with the custom theme
+}
