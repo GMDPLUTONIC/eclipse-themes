@@ -8,11 +8,6 @@
     <link rel="icon" href="/favicon.png">
 </head>
 <body>
-
-    <div class="section">
-        <h3>Upload Custom Theme</h3>
-        <input type="file" id="uploadCustomTheme" onchange="applyCustomTheme(event)">
-    </div>
     
     <div class="section" id="blur-section">
         <h3>Blur Settings:</h3>
@@ -38,11 +33,11 @@
         <h3>Details:</h3>
         <label>Author <input autocomplete="off" type="text" id="author" placeholder="Theme-Author" value="Theme-Author" onchange="updateValue('author', this.value)"></label><br>
         <label>Description <input autocomplete="off" type="text" id="description" placeholder="Theme-Description" value="Theme-Description" onchange="updateValue('description', this.value)"></label><br>
-        <label>Layout <input autocomplete="off" type="text" id="layout" placeholder="Layout" value="0" min="0" max="2" onchange="updateValue('layout', this.value)"></label><br>
+        <label>Layout <input autocomplete="off" type="text" id="layout" placeholder="Layout" value="0" min="0" max="2" step="1" onchange="updateValue('layout', this.value)"></label><br>
         <label>Name <input autocomplete="off" type="text" id="name" placeholder="Theme Name" value="Theme-Name" onchange="updateValue('name', this.value)"> </label><br>
-        <label>Renderer <input autocomplete="off" type="number" id="renderer" placeholder="Renderer" value="0" min="0" max="1" onchange="updateValue('renderer', this.value)"></label><br>
-        <label>Schema <input autocomplete="off" type="number" id="schema" placeholder="Schema" value="1" min="0" max="1" onchange="updateValue('schema', this.value)"></label><br>
-        <label>Style <input autocomplete="off" type="number" id="style" placeholder="Style" value="2" min="0" max="2" onchange="updateValue('style', this.value)"></label>
+        <label>Renderer <input autocomplete="off" type="number" id="renderer" placeholder="Renderer" value="0" min="0" max="1" step="1" onchange="updateValue('renderer', this.value)"></label><br>
+        <label>Schema <input autocomplete="off" type="number" id="schema" placeholder="Schema" value="1" min="0" max="1" step="1" onchange="updateValue('schema', this.value)"></label><br>
+        <label>Style <input autocomplete="off" type="number" id="style" placeholder="Style" value="2" min="0" max="2" step="1" onchange="updateValue('style', this.value)"></label>
     </div>
 
     <div class="section" id="other-section">
